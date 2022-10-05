@@ -1,4 +1,4 @@
-def package(String dirName)){
+def package(String dirName){
 
     sh """
     cd $WORKSPACE/$dirName
