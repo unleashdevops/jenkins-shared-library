@@ -1,4 +1,7 @@
-def package(){
+def package(String dirName)){
 
-    sh "mvn clean package"
+    sh """
+    cd $WORKSPACE/$dirName
+    mvn clean package
+    """
 }
