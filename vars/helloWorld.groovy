@@ -1,3 +1,3 @@
 def call(){
-     sh "mvn validate"
+     sh "echo 'welcome to shared library'"
 }
