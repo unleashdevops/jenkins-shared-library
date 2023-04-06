@@ -32,15 +32,15 @@ body()
      options {
       buildDiscarder(logRotator(numToKeepStr: '20'))
       skipDefaultCheckout()
-     }
-     stages {
-           stage ('Clean Workspace') {
-               steps {
-                   script {
-                       sh 'git clean -dxf'
-                   }
-               }
-           }
+     }
+     stages {
+           stage ('Clean Workspace') {
+               steps {
+                   script {
+                       sh 'git clean -dxf'
+                   }
+               }
+           }
           
           stage('test'){
             steps{
