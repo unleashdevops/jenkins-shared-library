@@ -32,8 +32,8 @@ body()
      options {
       buildDiscarder(logRotator(numToKeepStr: '20'))
       skipDefaultCheckout()
-      }
-      stages {
+     }
+     stages {
            stage ('Clean Workspace') {
                steps {
                    script {
