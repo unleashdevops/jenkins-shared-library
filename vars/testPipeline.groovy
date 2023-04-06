@@ -10,6 +10,7 @@ body()
           returnStdout: true
        ) 
       skip_ci=commit_message.contains("[skipci]")
+   print("skip_ci value is:"+skip_ci)
      
   if(skip_ci){
       println """
