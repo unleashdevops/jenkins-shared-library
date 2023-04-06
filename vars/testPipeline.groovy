@@ -1,12 +1,10 @@
 def call(body) {
-
-    def config = [:]
-    boolean skip_ci=false
-    body.resolveStrategy = Closure.DELEGATE_FIRST
-    body.delegate = config
-    body()
-
-    node( label: 'linux'){
+def config = [:]
+boolean skip_ci=false
+body.resolveStrategy = Closure.DELEGATE_FIRST
+body.delegate = config
+body()
+ node( label: 'linux'){
         String commit_message = sh(
             script: "git log -1 --pretty=%B",
             returnStdout: true
