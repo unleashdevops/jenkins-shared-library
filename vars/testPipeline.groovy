@@ -5,6 +5,7 @@ body.resolveStrategy = Closure.DELEGATE_FIRST
 body.delegate = config
 body()
  node( label: 'linux'){
+      checkout scm
        String commit_message = sh(
           script: "git log -1 --pretty=%B",
           returnStdout: true
