@@ -11,11 +11,11 @@ body()
        ) 
       skip_ci=commit_message.contains("[skipci]")
      
-  if(skip_ci){ 
+  if(skip_ci){
       println """
                 [skipci] token FOUND in commit message: $commit_message 
                 Skipping pipeline...
-               """            
+             """
           return
   } else{
         println """
@@ -28,7 +28,7 @@ body()
 
  if(!skip_ci){
  pipeline {
-     agent { label 'linux' } 
+     agent { label 'linux' }
      options {
       buildDiscarder(logRotator(numToKeepStr: '20'))
       skipDefaultCheckout()
@@ -39,7 +39,7 @@ body()
                     script {
                         sh 'git clean -dxf'
                     }
-                }             
+                }
             }
           
           stage('test'){
